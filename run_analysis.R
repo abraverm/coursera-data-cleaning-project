@@ -73,4 +73,4 @@ tidy <- aggregate(dataset[-1], by=list(dataset$label, dataset$subject), FUN=mean
 tidy <- tidy[ , !(names(dataset) %in% c('subject'))]
 names(tidy)[names(tidy)=="Group.1"] <- "activity"
 names(tidy)[names(tidy)=="Group.2"] <- "subject"
-write.csv(tidy, file = "tidy.csv")
+write.table(tidy, file = "tidy.txt", row.name = FALSE)
